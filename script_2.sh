@@ -5,21 +5,21 @@ passwords_file="passwords.txt"
 
 #パスワードを追加する関数
 add_password(){
-    echo -n "サービス名を入力してください"
+    echo -n "サービス名を入力してください。"
     read service
-    echo -n "ユーザー名を入力してください"
+    echo -n "ユーザー名を入力してください。"
     read username
-    echo -n "パスワードを入力してください"
+    echo -n "パスワードを入力してください。"
     read password
 
     #ファイルに保存
     echo "$service:$username:$password" >> $passwords_file
-    echo "パスワードの追加は成功しました"
+    echo "パスワードの追加は成功しました！"
 }
 
 #パスワードを取得する関数
 get_password(){
-    echo -n "サービス名を入力して下さい" 
+    echo -n "サービス名を入力して下さい！" 
     read search_service
 
     while IFS=: read -r service username password
@@ -32,11 +32,11 @@ get_password(){
         fi
     done < $passwords_file
 
-    echo "そのサービスは登録されていません"
+    echo "そのサービスは登録されていません！"
 }
 
 #最初のメッセージ
-echo "パスワードマネージャーへようこそ！"
+echo "パスワードマネージャーへようこそ♪"
 
 #メイン機能
 while true
