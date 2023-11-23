@@ -25,9 +25,9 @@ get_password(){
     while IFS=: read -r service username password
     do
         if [ "$service" == "$search_service" ]; then
-        echo "サービス名:$service"
-        echo "ユーザー名:$username"
-        echo "パスワード:$password"
+        echo "サービス名: $service"
+        echo "ユーザー名: $username"
+        echo "パスワード: $password"
         return
         fi
     done < $passwords_file
